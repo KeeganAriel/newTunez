@@ -7,7 +7,7 @@
 $(document).ready(function () {
 	// $('#sumbit').click(function(event) {
 	// 	event.preventDefault();
-	// 	var search = $('#imput').val();
+	// 	var search = $('#input').val();
 	// 		console.log("pizza");
 
 		// $.getJSON('http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user='+ search +'&api_key='+ key +'&format=json', 
@@ -20,8 +20,8 @@ $(document).ready(function () {
 		// });
 
 	// });
-	var userImput = $('#imput').val();
-	$('#sumbit').click(function() {
+	var userImput = $('#input').val();
+	$('#sumbit').submit(function() {
 		console.log(userImput);
 	});
 
