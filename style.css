@@ -57,13 +57,16 @@
     font-weight: bold;
     text-align: center;
     margin-top: 2em;
-    font-family: 'Righteous', cursive;
+    font-family: 'Roboto Slab', serif;
+    color: #5B314B;
 }
 
 .artistname {
   text-align: center;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Righteous', cursive; 
   font-size: 1.5em;
+  color: #5B314B;
+
 }
 
 .img {
