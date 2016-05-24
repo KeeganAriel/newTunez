@@ -52,6 +52,24 @@
 
 }
 
+.form-control:focus {
+  border-color: #5B314B !important;
+  box-shadow: 0 1px 1px rgba(91, 49, 75, 1) inset, 0 0 8px rgba(91, 49, 75, 1) !important;
+  outline: 0 none !important;
+}
+
+button:focus {
+  border-color: #5B314B !important;
+  box-shadow: 0 1px 1px rgba(91, 49, 75, 1) inset, 0 0 8px rgba(91, 49, 75, 1) !important;
+  outline: 0 none !important;
+  background-color: rgba(91, 49, 75, 0.23) !important;
+}
+
+button:hover {
+ background-color: rgba(91, 49, 75, 0.23) !important;
+}
+
+
 .title {
     font-size: 2em;
     font-weight: bold;
@@ -79,4 +97,10 @@
 
 .img:last-child {
   margin-bottom: 5em;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  margin-top: 8em;
 }
