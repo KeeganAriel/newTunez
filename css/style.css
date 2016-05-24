@@ -104,3 +104,7 @@ button:hover {
   justify-content: center;
   margin-top: 8em;
 }
+
+.fa {
+  color: #5B314B;
+}
