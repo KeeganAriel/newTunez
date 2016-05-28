@@ -49,7 +49,6 @@
   width: 75%;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .form-control:focus {
@@ -57,6 +56,20 @@
   box-shadow: 0 1px 1px rgba(91, 49, 75, 1) inset, 0 0 8px rgba(91, 49, 75, 1) !important;
   outline: 0 none !important;
 }
+
+::-webkit-input-placeholder {
+  color: #D8A57A !important;
+}
+:-moz-placeholder {
+  color: #D8A57A !important;
+}
+::-moz-placeholder {
+  color: #D8A57A !important;
+}
+:-ms-input-placeholder {
+  color: #D8A57A !important;
+}
+
 
 button:focus {
   border-color: #5B314B !important;
@@ -69,30 +82,33 @@ button:hover {
  background-color: rgba(91, 49, 75, 0.23) !important;
 }
 
-
-.title {
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 2em;
-    font-family: 'Roboto Slab', serif;
-    color: #5B314B;
+button {
+  width: 5em;
+  color: #D8843D !important;
 }
 
-.artistname {
+.videoTitle {
+  font-size: 2em;
+  font-weight: bold;
   text-align: center;
-  font-family: 'Righteous', cursive; 
+  margin-top: 2em;
+  font-family: 'Roboto Slab', serif;
+  color: #5B314B;
+}
+
+.postDate {
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
   font-size: 1.5em;
   color: #5B314B;
-
 }
 
-.img {
+
+.video {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 1em;
-
+  margin-top: 3em;
 }
 
 .img:last-child {
