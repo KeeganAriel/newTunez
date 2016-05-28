@@ -1,9 +1,3 @@
-// connect input to get request and append info to div
-// use user name to get query
-// display artest names
-// last fm to imvdb
-
-
 $(document).ready(function () {
 	$('#submit').click(function(event) {
 		event.preventDefault();
@@ -22,15 +16,13 @@ $(document).ready(function () {
 				var template = $('#resultTemplate').html();
 				var render = Handlebars.compile(template);
 				var artistID = data.results[0].artistId;
-					console.log(artistID);
+				console.log(artistID);
 				getamgid(artistID);
 			}
-			});
-
-
+		});
 	});
 
-var getamgid = function(artistID) {
+	var getamgid = function(artistID) {
 		$.ajax({
 			url:'https://itunes.apple.com/lookup?',
 			jsonp: 'callback',
@@ -39,14 +31,14 @@ var getamgid = function(artistID) {
 				id : artistID,
 			}, 
 			success: function(data) {
-			var amgID = data.results[0].amgArtistId;
+				var amgID = data.results[0].amgArtistId;
 				console.log(amgID);
 				getAlbums(amgID);
 			}	
 		});
 	};
 
- var getAlbums = function(amgID) {
+	var getAlbums = function(amgID) {
 
 		$.ajax({
 			url:'https://itunes.apple.com/lookup',
@@ -59,16 +51,17 @@ var getamgid = function(artistID) {
 				sort: "recent",
 			}, 
 			success: function(data) {
-			var artName = data.results[1].artistName;
-			var release = data.results[1].collectionName;
-			getVideo(artName, release);
+				var artName = data.results[1].artistName;
+				var release = data.results[1].collectionName;
+				getVideo(artName, release);
 				console.log(data);
-				
+				console.log(artName, release);
 			}	
 		});
 	};
-var getVideo = function(artName, release) {
-	$.getJSON('https://www.googleapis.com/youtube/v3/search', 
+
+	var getVideo = function(artName, release) {
+		$.getJSON('https://www.googleapis.com/youtube/v3/search', 
 			{key: "AIzaSyAitXKVR92IKLca15azobSZz7L9bL0Pt44", 
 			part: "snippet",
 			q: artName+" "+" "+release,
@@ -76,11 +69,23 @@ var getVideo = function(artName, release) {
 			console.log(data);
 			displayResults(data);
 		});
-}
+	};
 
+	var displayResults = function(results) {
+		var html = "";
+		var source = $('#resultTemplate').html();
+		var resTemplate = Handlebars.compile(source);
+		$.each(results.items, function(index, value) {
+			html += resTemplate(value);
+		});
+		$('.searchResults').html(html);
+	};
 });
 
-// query for the artist name from user imput
-// get the artist ID
-// list of releases sorted by year
-// 
+// what if no videos to display? 
+	// display itunes?
+	// display artist and title?
+
+//display only top(3?) result?
+
+//change display of date to leave off time code
