@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>newTunez</title>
 </head>
 <body>
@@ -15,18 +16,20 @@
 	<div class="container-fluid">
 
 		<img class="logo" src="images/tuneZlogo.png">
-
-		<div class="search">
-			<div class="col-lg-6">
+	
+		<div class="search row">
+			<div class="col-lg-6 col-lg-offset-3">
+			<form>
 				<div class="input-group">
 					<input type="text" class="form-control" placeholder="Find new songs by artists you love!" id="username">
 					<span class="input-group-btn">
-						<button class="btn btn-default" type="button" id="submit">
+						<button class="btn btn-default" type="submit" id="submit">
 							<span class="glyphicon glyphicon-music"></span>
 
 						</button>
 					</span>
 				</div>
+			</form>
 			</div>
 		</div>
 
@@ -36,10 +39,11 @@
 
 		<template id="resultTemplate">
 			<p class="videoTitle">Newest Video:<br><b>{{this.snippet.title}}</b></p>
-			<p class="postDate">Posted on: {{this.snippet.publishedAt}}</p>
-			<a href="https://www.youtube.com/watch?v={{this.id.videoId}}">
+			<p class="postDate">Posted on: {{this.displayDate}}</p>
+			<!-- <a href="https://www.youtube.com/watch?v={{this.id.videoId}}">
 				<img class="video" src="{{this.snippet.thumbnails.high.url}}"/> 
-			</a>
+			</a> -->
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/{{this.id.videoId}}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 		</template>
 
 		<footer class="icons">

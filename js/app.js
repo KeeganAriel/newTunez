@@ -1,5 +1,6 @@
 $(document).ready(function () {
-	$('#submit').click(function(event) {
+	
+	$('form').submit(function(event) {
 		event.preventDefault();
 		var userInput = $('#username').val();
 		console.log(userInput);
@@ -75,7 +76,8 @@ $(document).ready(function () {
 		var html = "";
 		var source = $('#resultTemplate').html();
 		var resTemplate = Handlebars.compile(source);
-		$.each(results.items, function(index, value) {
+		$.each(results.items.slice(0,3), function(index, value) {
+			value.displayDate = value.snippet.publishedAt.slice(0,10);
 			html += resTemplate(value);
 		});
 		$('.searchResults').html(html);
